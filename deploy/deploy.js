@@ -13,7 +13,7 @@ module.exports = async function (hre) {
 
   const box = await hre.zkUpgrades.deployProxy(
     deployer.zkWallet,
-    contract,
+    BoxContract,
     [],
     {
       initializer: "initialize",
