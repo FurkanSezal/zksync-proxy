@@ -6,9 +6,9 @@ module.exports = async function (hre) {
   console.log(`Running deploy script for the Greeter contract`);
   const PRIVATE_KEY = process.env.PRIVATE_KEY;
 
-  const wallet = new Wallet(PRIVATE_KEY);
+  const zkWallet = new Wallet(PRIVATE_KEY);
 
-  const deployer = new Deployer(hre, wallet);
+  const deployer = new Deployer(hre, zkWallet);
   const BoxContract = await deployer.loadArtifact("Box");
 
   const box = await hre.zkUpgrades.deployProxy(
